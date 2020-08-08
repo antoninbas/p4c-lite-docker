@@ -23,7 +23,7 @@ jobs:
     - name: Test image
       run: ./ci/smoke_test.sh
     - name: Push image to registry
-      if: ${{ github.repository == 'vmware-tanzu/antrea' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
+      if: ${{ github.repository == 'antoninbas/p4c-lite-docker' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
