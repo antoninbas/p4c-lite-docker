@@ -10,6 +10,8 @@ function print_usage {
     echoerr "Usage: $0 [--img <IMG_NAME>]"
 }
 
+THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 P4C_IMG=antoninbas/p4c-lite
 while [[ $# -gt 0 ]]
 do
@@ -36,7 +38,7 @@ trap "rm -rf $tmp_dir" EXIT
 
 TEST_PROG="loopback_v1model.p4"
 
-cp p4src/$TEST_PROG $tmp_dir
+cp $THIS_DIR/p4src/$TEST_PROG $tmp_dir
 
 echoerr "Testing p4test"
 docker run --rm -v $tmp_dir:/p4src -t antoninbas/p4c-lite p4test /p4src/$TEST_PROG
