@@ -10,7 +10,7 @@ This repository maintains alternative images for the latest version of p4c
 of p4c (the p4c driver is included).
 
 | Image name           | Base Distribution | Image Size | Image Size Compressed |
-| -------------------- | ----------------- |
+| -------------------- | ----------------- | ---------- | --------------------- |
 | antoninbas/p4c-lite  | Ubuntu 20.04      | 300MB      | 80MB                  |
 
 *If you want to contribute images for new distributions or if you know ways of
