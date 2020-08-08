@@ -1,0 +1,13 @@
+diff --git a/tools/driver/p4c_src/p4c.bmv2.cfg b/tools/driver/p4c_src/p4c.bmv2.cfg
+index 7b3faccb7..13ba10cfc 100644
+--- a/tools/driver/p4c_src/p4c.bmv2.cfg
++++ b/tools/driver/p4c_src/p4c.bmv2.cfg
+@@ -21,7 +21,7 @@ class BMV2Backend(BackendDriver):
+         BackendDriver.__init__(self, target, arch, argParser)
+ 
+         # commands
+-        self.add_command('preprocessor', 'cc')
++        self.add_command('preprocessor', 'cpp')
+         self.add_command('compiler',
+                          os.path.join(os.environ['P4C_BIN_DIR'],'p4c-bm2-ss'))
+         # order of invocation
