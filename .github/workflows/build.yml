@@ -1,0 +1,32 @@
+name: Build, test and push latest images if needed
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+  schedule:
+    # every 12 hours
+    - cron: '0 */12 * * *'
+
+
+jobs:
+  build-ubuntu-20_04:
+    runs-on: [ubuntu-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build image
+      working-directory: ubuntu
+      run: ./build.sh
+    - name: Test image
+      run: ./ci/smoke_test.sh
+    - name: Push image to registry
+      if: ${{ github.repository == 'vmware-tanzu/antrea' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+        docker push antoninbas/p4c-lite
