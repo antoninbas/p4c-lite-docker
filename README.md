@@ -16,4 +16,18 @@ of p4c (the p4c driver is included).
 *If you want to contribute images for new distributions or if you know ways of
  reducing the image sizes further, any help is appreciated!.*
 
+## Usage
+
+If you need to use the image to compile a P4 program, the easiest way to get
+started is to use the [p4c-lite.sh](p4c-lite.sh) script:
+```bash
+wget https://raw.githubusercontent.com/antoninbas/p4c-lite-docker/master/p4c-lite.sh
+chmod +x p4c-lite.sh
+./p4c-lite.sh <path to P4 program>
+```
+
+You can also use `docker run` to run a container directly, but be aware
+that you will need to mount the P4 source code into the container, as
+well as the output directory for compilation artifacts.
+
 [antoninbas/p4c-lite]: https://hub.docker.com/r/antoninbas/p4c-lite

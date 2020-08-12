@@ -46,3 +46,5 @@ echoerr "Testing p4c-bm2-ss"
 docker run --rm -v $tmp_dir:/p4src -t antoninbas/p4c-lite p4c-bm2-ss /p4src/$TEST_PROG
 echoerr "Testing p4c"
 docker run --rm -v $tmp_dir:/p4src -t antoninbas/p4c-lite p4c /p4src/$TEST_PROG
+echoerr "Testing p4c-lite.sh"
+$THIS_DIR/../p4c-lite.sh $tmp_dir/$TEST_PROG
