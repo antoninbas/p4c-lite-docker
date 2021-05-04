@@ -11,7 +11,7 @@ of p4c (the p4c driver is included).
 
 | Image name             | Base Distribution | Image Size | Image Size Compressed | Build Status |
 | ---------------------- | ----------------- | ---------- | --------------------- | ------------ |
-| [antoninbas/p4c-lite]  | Ubuntu 20.04      | 300MB      | 80MB                  | ![Ubuntu 20.04](https://github.com/antoninbas/p4c-lite-docker/workflows/Ubuntu%2020.04/badge.svg?branch=master&event=schedule) |
+| [antoninbas/p4c-lite]  | Ubuntu 20.04      | 300MB      | 80MB                  | ![Ubuntu 20.04](https://github.com/antoninbas/p4c-lite-docker/workflows/Ubuntu%2020.04/badge.svg?branch=main&event=schedule) |
 
 *If you want to contribute images for new distributions or if you know ways of
  reducing the image sizes further, any help is appreciated!.*
@@ -21,7 +21,7 @@ of p4c (the p4c driver is included).
 If you need to use the image to compile a P4 program, the easiest way to get
 started is to use the [p4c-lite.sh](p4c-lite.sh) script:
 ```bash
-wget https://raw.githubusercontent.com/antoninbas/p4c-lite-docker/master/p4c-lite.sh
+wget https://raw.githubusercontent.com/antoninbas/p4c-lite-docker/main/p4c-lite.sh
 chmod +x p4c-lite.sh
 ./p4c-lite.sh <path to P4 program>
 ```

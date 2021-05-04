@@ -3,10 +3,10 @@ name: Ubuntu 20.04
 on:
   pull_request:
     branches:
-      - master
+      - main
   push:
     branches:
-      - master
+      - main
   schedule:
     # every 12 hours
     - cron: '0 */12 * * *'
@@ -23,7 +23,7 @@ jobs:
     - name: Test image
       run: ./ci/smoke_test.sh
     - name: Push image to registry
-      if: ${{ github.repository == 'antoninbas/p4c-lite-docker' && github.event_name != 'pull_request' && github.ref == 'refs/heads/master' }}
+      if: ${{ github.repository == 'antoninbas/p4c-lite-docker' && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' }}
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
