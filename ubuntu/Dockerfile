@@ -21,7 +21,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ARG P4C_URL=https://github.com/p4lang/p4c.git
-ARG P4C_REF=master
+ARG P4C_REF=main
 
 WORKDIR /
 
