@@ -11,7 +11,7 @@ of p4c (the p4c driver is included).
 
 | Image name             | Base Distribution | Image Size | Image Size Compressed | Build Status |
 | ---------------------- | ----------------- | ---------- | --------------------- | ------------ |
-| [antoninbas/p4c-lite]  | Ubuntu 20.04      | 300MB      | 80MB                  | ![Ubuntu 20.04](https://github.com/antoninbas/p4c-lite-docker/workflows/Ubuntu%2020.04/badge.svg?branch=main&event=schedule) |
+| [antoninbas/p4c-lite]  | Ubuntu 22.04      | 300MB      | 80MB                  | ![Ubuntu 22.04](https://github.com/antoninbas/p4c-lite-docker/workflows/Ubuntu%2022.04/badge.svg?branch=main&event=schedule) |
 
 *If you want to contribute images for new distributions or if you know ways of
  reducing the image sizes further, any help is appreciated!.*

@@ -1,4 +1,4 @@
-ARG UBUNTU_VERSION=20.04
+ARG UBUNTU_VERSION=22.04
 FROM ubuntu:${UBUNTU_VERSION} as p4c-build
 
 ENV P4C_BUILD_DEPS bison \
@@ -39,7 +39,7 @@ RUN /apply-patches.sh
 
 WORKDIR /p4c/build
 
-RUN cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_CXX_FLAGS:STRING=-O3 -DENABLE_GTESTS=OFF -DENABLE_EBPF=OFF -DENABLE_P4C_GRAPHS=OFF .. && \
+RUN cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DCMAKE_CXX_FLAGS:STRING=-O3 -DENABLE_GTESTS=OFF -DENABLE_EBPF=OFF -DENABLE_P4C_GRAPHS=OFF -DENABLE_UBPF=OFF -DENABLE_DPDK=OFF -DENABLE_TEST_TOOLS=OFF .. && \
     make && \
     make DESTDIR=/output install
 
@@ -50,8 +50,8 @@ LABEL description="A lightweight image for the p4lang/p4c compiler based on Ubun
 # runtime dependencies
 # python is required by the p4c driver
 # python3-minimal is missing shlex
-ENV P4C_RUNTIME_DEPS libboost-iostreams1.71.0 \
-                     libgc1c2 \
+ENV P4C_RUNTIME_DEPS libboost-iostreams1.74.0 \
+                     libgc1 \
                      cpp \
                      libgmp10 \
                      python3

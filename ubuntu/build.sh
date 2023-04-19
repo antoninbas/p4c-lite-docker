@@ -32,7 +32,7 @@ esac
 done
 
 if [ -z "$UBUNTU_VERSION" ]; then
-    UBUNTU_VERSION=20.04
+    UBUNTU_VERSION=22.04
 fi
 
 THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
